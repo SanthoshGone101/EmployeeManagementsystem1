@@ -1,0 +1,58 @@
+<div class="card-box">
+    <form [formGroup]="AddLeaveForm" (ngSubmit)="SaveRequestLeave()" >
+    <div class="row">
+        <h2 style="text-align: center;">Add Request Leave</h2>
+    </div>
+    
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Serial No</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="slNo"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Leave Type</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="leaveType"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Date of Leave</label>
+                <input type="datetime-local" id="txtcode" class="form-control" formControlName="dateOfLeave"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">End of Leave</label>
+                <input type="datetime-local" id="txtcode" class="form-control" formControlName="endOfLeave"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Reason</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="reason"/>
+            </div>
+        </div>
+    </div>
+   
+    <div class="offset-lg-3 col-lg-5">
+        <div class="d-grid gap-4 d-md-block">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+            <button type="update" class="btn btn-primary btn-lg btn-block" (click)="UpdateRequestLeave()" >Update</button>
+        </div>
+    </div>
+    </div>
+</form>
+</div>
+

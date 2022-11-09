@@ -1,0 +1,34 @@
+<div class="card-box">
+    <div class="row">
+        <div class="col-sm-4">
+            <a  id="addbtn" class="btn btn-secondary btn-rounded" routerLink="/designation/add-designation" >Add New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="datatable" role="grid">
+                <thead class="">
+                    <tr role="row">
+                        <th>slNo</th>
+                        <th>DesignationName</th>
+                        <th>RoleName</th>
+                        <th>DepartmentName</th>
+                        
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let list of designationData">
+                        <td>{{list.slNo}}</td>
+                        <td>{{list.designationName}}</td>
+                        <td>{{list.roleName}}</td>
+                        <td>{{list.departmentName}}</td>
+                       
+                        <td><button   class="btn btn-primary" routerLink="/designation/add-designation/{{list.designationName}}" >Edit</button> |
+                        <button (click)="delete(list.designationName)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

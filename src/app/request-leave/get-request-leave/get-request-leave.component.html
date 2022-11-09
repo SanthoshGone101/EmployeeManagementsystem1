@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-sm-4">
+        <a  id="addbtn" class="btn btn-success btn-rounded" routerLink="/request-leave/add-request-leave">Add New</a>
+    </div>
+</div>
+ <table class="table table-success ">
+    <thead class="bg-info ">
+        <tr role="row">
+            <th>SerialNo</th>
+            <th>Leave Type</th>
+            <th>DateOfLeave</th>
+            <th>EndOfLeave</th>
+            <th>Reason</th>
+            <th>Action</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of LeaveData">
+            <td>{{list.slNo}}</td>
+            <td>{{list.leaveType}}</td>
+            <td>{{list.dateOfLeave}}</td>
+            <td>{{list.endOfLeave}}</td>
+            <td>{{list.reason}}</td>
+            
+            <td><button routerLink="/request-leave/add-request-leave/{{list.slNo}}"  class="btn btn-primary" >Edit</button> |
+            <button (click)="delete(list.slNo)" class="btn btn-danger">Delete</button></td>
+        </tr>
+        
+    </tbody>
+  </table>
+  
+

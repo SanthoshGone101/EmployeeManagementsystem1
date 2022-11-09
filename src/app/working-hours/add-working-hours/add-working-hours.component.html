@@ -1,0 +1,58 @@
+<div class="card-box">
+    <form [formGroup]="AddWorkingHrForm" (ngSubmit)="SaveWorkingHr()" >
+    <div class="row">
+        <h2 style="text-align: center;">Add Working Hours</h2>
+    </div>
+    
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Serial No</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="slNo"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Company Hour</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="companyHour"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Employee Hour</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="employeeHour"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Monthly Company Hour</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="monthlyCompanyHour"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <div class="form-group">
+                <label for="txtcode">Monthly Employee Hour</label>
+                <input type="text" id="txtcode" class="form-control" formControlName="monthlyEmployeeHour"/>
+            </div>
+        </div>
+    </div>
+   
+    <div class="offset-lg-3 col-lg-5">
+        <div class="d-grid gap-4 d-md-block">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="ClickOnAdd()">Submit</button>
+            <button type="update" class="btn btn-primary btn-lg btn-block" (click)="UpdateWorkingHr(this.AddWorkingHrForm.value.slNo)" >Update</button>
+        </div>
+    </div>
+       
+    </div>
+</form>
+</div>

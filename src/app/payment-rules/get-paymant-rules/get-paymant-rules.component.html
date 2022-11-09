@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-4">
+        <a  id="addbtn" class="btn btn-success btn-rounded" routerLink="/payment-rules/add-payment">Add New</a>
+    </div>
+</div>
+
+ <table class="table table-secondary ">
+    <thead class="bg-info ">
+        <tr role="row">
+            <th>PaymentId</th>
+            <th>PaymentType</th>
+            <th>Amount</th>
+            <th>PaymentTime</th>
+            <th>Action</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of PaymentData">
+            <td>{{list.paymentId}}</td>
+            <td>{{list.paymentType}}</td>
+            <td>{{list.amount}}</td>
+            <td>{{list.paymentTime}}</td>
+            
+            <td><button routerLink="/payment-rules/add-payment/{{list.paymentId}}"  class="btn btn-primary" >Edit</button> |
+            <button (click)="delete(list.paymentId)" class="btn btn-danger">Delete</button></td>
+        </tr>
+        
+    </tbody>
+  </table>
+  
+

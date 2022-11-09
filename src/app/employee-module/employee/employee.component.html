@@ -1,0 +1,37 @@
+<div class="card-box">
+    <div class="row">
+        <div class="col-sm-4">
+            <a  id="addbtn" class="btn btn-success btn-rounded" routerLink="/employee-module/add-employee">Add New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="datatable" role="grid">
+                <thead class="bg-primary text-white">
+                    <tr role="row">
+                        <th>SlNo</th>
+                        <th>EmployeeID</th>
+                        <th>EmployeeName</th>
+                        <th>PhoneNumber</th>
+                        <th>MailId</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let list of EmployeeData">
+                        <td>{{list.slNo}}</td>
+                        <td>{{list.employeeID}}</td>
+                        <td>{{list.employeeName}}</td>
+                        <td>{{list.phoneNumber}}</td>
+                        <td>{{list.mailId}}</td>
+                        <td>{{list.address}}</td>
+                        <td><button routerLink="/employee-module/add-employee/{{list.employeeID}}"  class="btn btn-primary" >Edit</button> |
+                        <button (click)="delete(list.employeeID)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
